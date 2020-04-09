@@ -64,7 +64,7 @@ class _HomeState extends State<Home> {
             setState(() {
               _currentIndex = index;
               _pageController.animateToPage(index,
-                  duration: Duration(milliseconds: 100), curve: Curves.fastOutSlowIn);
+                  duration: Duration(milliseconds: 100), curve: Curves.ease);
             });
           },
           items: [

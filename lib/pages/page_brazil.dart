@@ -12,7 +12,7 @@ Widget buildPageBrazil() {
       switch (snapshot.connectionState) {
         case ConnectionState.none:
         case ConnectionState.waiting:
-          return Center(child: buildTextCharger("Carregando Dados..."));
+          return Center(child: buildTextCharger(""));
         default:
           if (snapshot.hasError) {
             return Center(child: buildTextCharger("Erro ao carregar dados"));
