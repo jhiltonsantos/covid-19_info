@@ -12,7 +12,21 @@ Widget buildPageBrazil() {
       switch (snapshot.connectionState) {
         case ConnectionState.none:
         case ConnectionState.waiting:
-          return Center(child: buildTextCharger(""));
+          return Scaffold(
+            backgroundColor: darkPrimary,
+            body: Center(
+              child: Container(
+                alignment: Alignment.center,
+                width: 70,
+                height: 70,
+                child: CircularProgressIndicator(
+                  backgroundColor: darkPrimary,
+                  valueColor: AlwaysStoppedAnimation<Color>(darkPrimaryPurple),
+                  strokeWidth: 5.0,
+                ),
+              ),
+            ),
+          );
         default:
           if (snapshot.hasError) {
             return Center(child: buildTextCharger("Erro ao carregar dados"));
