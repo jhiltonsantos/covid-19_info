@@ -8,8 +8,9 @@ import 'package:transparent_image/transparent_image.dart';
 
 Widget buildPageNews() {
   return Scaffold(
-      backgroundColor: darkPrimary,
-      body: Center(child: FutureBuilder<Map>(
+    backgroundColor: darkPrimary,
+    body: Center(
+      child: FutureBuilder<Map>(
         future: getDataNews(),
         // ignore: missing_return
         builder: (context, snapshot) {
@@ -22,8 +23,7 @@ Widget buildPageNews() {
                 height: 70,
                 child: CircularProgressIndicator(
                   backgroundColor: darkPrimary,
-                  valueColor:
-                  AlwaysStoppedAnimation<Color>(darkPrimaryPurple),
+                  valueColor: AlwaysStoppedAnimation<Color>(darkPrimaryPurple),
                   strokeWidth: 5.0,
                 ),
               );
@@ -36,7 +36,9 @@ Widget buildPageNews() {
               }
           }
         },
-      ),),);
+      ),
+    ),
+  );
 }
 
 Widget _createNewTable(BuildContext context, AsyncSnapshot snapshot) {
@@ -54,42 +56,40 @@ Widget _createNewTable(BuildContext context, AsyncSnapshot snapshot) {
           child: Center(
             child: Card(
               shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(5.0),
+                borderRadius: BorderRadius.circular(5.0),
               ),
               color: darkPrimaryText,
               child: Column(
                 children: <Widget>[
                   SizedBox(
-                    width: 400.0,
-                    height: 25.0,
-                  ),
-                  SizedBox(
-                    width: 400.0,
-                    height: 100.0,
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 10.0),
-                      child: Text(
-                        _titleWebCard(snapshot, index),
-                        style: TextStyle(
-                          color: Colors.lightGreenAccent,
-                          fontSize: 18.0,
+                      width: 400.0,
+                      height: 100.0,
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 10.0, vertical: 5.0),
+                        child: Center(
+                          child: Text(
+                            _titleWebCard(snapshot, index),
+                            style: TextStyle(
+                              color: Colors.lightGreenAccent,
+                              fontSize: 18.0,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
                         ),
-                        textAlign: TextAlign.center,
-                      ),
+                      )),
+                  Expanded(
+                    child: FadeInImage.memoryNetwork(
+                      placeholder: kTransparentImage,
+                      image: _imageWebCard(snapshot, index),
+                      width: 300.0,
+                      height: 170.0,
+                      fit: BoxFit.cover,
                     ),
                   ),
-                  FadeInImage.memoryNetwork(
-                    placeholder: kTransparentImage,
-                    alignment: Alignment.center,
-                    image: _imageWebCard(snapshot, index),
-                    width: 320.0,
-                    height: 220.0,
-                    fit: BoxFit.cover,
-                  ),
                   SizedBox(
-                    width: 10.0,
                     height: 10.0,
-                  ),
+                  )
                 ],
               ),
             ),
