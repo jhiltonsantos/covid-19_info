@@ -93,7 +93,7 @@ Widget buildPageAbout() {
                           color: Colors.blue[300],
                         ),
                         title: Text(
-                          'jhiltonsantos',
+                          'jhiltonsantos/covid-19_info',
                           style: TextStyle(
                             color: Colors.blue[300],
                           ),
