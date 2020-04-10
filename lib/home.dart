@@ -6,6 +6,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:covidinfo/pages/page_brazil.dart';
 import 'package:covidinfo/pages/page_world.dart';
+import 'package:covidinfo/pages/page_news.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -13,7 +14,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-
   int _currentIndex = 0;
   PageController _pageController;
 
@@ -43,11 +43,14 @@ class _HomeState extends State<Home> {
             Center(
               child: buildPageWorld(),
             ),
-            Center(
-              child: buildPageBrazil(),
-            ),
             Scaffold(
               backgroundColor: darkPrimary,
+              body: Center(
+                child: buildPageBrazil(),
+              ),
+            ),
+            Center(
+              child: buildPageNews(),
             ),
             Center(
               child: buildPageAbout(),
@@ -82,8 +85,8 @@ class _HomeState extends State<Home> {
               textAlign: TextAlign.center,
             ),
             BottomNavyBarItem(
-              icon: Icon(FontAwesomeIcons.chartBar),
-              title: Text('Estatísticas'),
+              icon: Icon(FontAwesomeIcons.newspaper),
+              title: Text('Notícias'),
               activeColor: Colors.lightGreenAccent,
               textAlign: TextAlign.center,
             ),
