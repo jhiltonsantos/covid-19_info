@@ -43,9 +43,8 @@ class _HomeState extends State<Home> {
             Center(
               child: buildPageWorld(),
             ),
-           Center(
-                child: buildPageBrazil(),
-
+            Center(
+              child: buildPageBrazil(),
             ),
             Center(
               child: buildPageNews(),
@@ -72,25 +71,37 @@ class _HomeState extends State<Home> {
           items: [
             BottomNavyBarItem(
               icon: Icon(FontAwesomeIcons.globeAmericas),
-              title: Text('Mundo'),
+              title: Text(
+                'Mundo',
+                style: TextStyle(fontFamily: 'WorkSans'),
+              ),
               activeColor: Colors.redAccent[100],
               textAlign: TextAlign.center,
             ),
             BottomNavyBarItem(
               icon: Icon(FontAwesomeIcons.solidFlag),
-              title: Text('Brasil'),
+              title: Text(
+                'Brasil',
+                style: TextStyle(fontFamily: 'WorkSans'),
+              ),
               activeColor: Colors.yellow[400],
               textAlign: TextAlign.center,
             ),
             BottomNavyBarItem(
               icon: Icon(FontAwesomeIcons.solidNewspaper),
-              title: Text('Notícias'),
+              title: Text(
+                'Notícias',
+                style: TextStyle(fontFamily: 'WorkSans'),
+              ),
               activeColor: Colors.lightGreenAccent,
               textAlign: TextAlign.center,
             ),
             BottomNavyBarItem(
               icon: Icon(MdiIcons.information),
-              title: Text('Sobre'),
+              title: Text(
+                'Sobre',
+                style: TextStyle(fontFamily: 'WorkSans'),
+              ),
               activeColor: Colors.blue[300],
               textAlign: TextAlign.center,
             )

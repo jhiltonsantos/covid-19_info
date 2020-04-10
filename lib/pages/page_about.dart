@@ -63,6 +63,8 @@ Widget buildPageAbout() {
                           'Atualizado em... $lastUpdate',
                           style: TextStyle(
                             color: Colors.blue[300],
+                            fontFamily: 'Roboto',
+                            fontSize: 16.0,
                           ),
                         ),
                       ),
@@ -80,6 +82,8 @@ Widget buildPageAbout() {
                           'https://github.com/mathdroid/covid-19-api/tree/master/api',
                           style: TextStyle(
                             color: Colors.blue[300],
+                            fontFamily: 'Roboto',
+                            fontSize: 16.0,
                           ),
                         ),
                       ),
@@ -98,6 +102,8 @@ Widget buildPageAbout() {
                             'jhiltonsantos/covid-19_info',
                             style: TextStyle(
                               color: Colors.blue[300],
+                              fontFamily: 'Roboto',
+                              fontSize: 16.0,
                             ),
                           ),
                         ),

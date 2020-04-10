@@ -15,7 +15,11 @@ class WebViewAbout extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'GithubProject',
-          style: TextStyle(fontSize: 25.0, color: darkPrimaryPurple),
+          style: TextStyle(
+            fontSize: 24.0,
+            color: Colors.blue[300],
+            fontFamily: 'Roboto',
+          ),
         ),
         backgroundColor: darkPrimary,
       ),

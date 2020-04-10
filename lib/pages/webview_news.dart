@@ -18,7 +18,7 @@ class WebViewNews extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           _newsData["title"],
-          style: TextStyle(fontSize: 14.0, color: Colors.lightGreenAccent),
+          style: TextStyle(fontSize: 14.0, color: Colors.lightGreenAccent, fontFamily: 'DMSerif'),
         ),
         backgroundColor: darkPrimary,
       ),

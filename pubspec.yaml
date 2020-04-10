@@ -31,4 +31,24 @@ flutter:
   assets:
     - images/
 
+  fonts:
+    - family: WorkSans
+      fonts:
+        - asset: fonts/WorkSans-Regular.ttf
+
+    - family: Roboto
+      fonts:
+        - asset: fonts/Roboto.ttf
+
+    - family: SansPro
+      fonts:
+        - asset: fonts/SourceSansPro-Regular.ttf
+
+    - family: Girassol
+      fonts:
+        - asset: fonts/Girassol-Regular.ttf
+
+    - family: DMSerif
+      fonts:
+        - asset: fonts/DMSerifText-Regular.ttf
 

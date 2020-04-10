@@ -1,4 +1,5 @@
 import 'package:covidinfo/api_covid.dart';
+import 'package:covidinfo/pages/webview.dart';
 import 'package:covidinfo/widget.dart';
 import 'package:covidinfo/colors.dart';
 import 'package:flutter/material.dart';
@@ -35,7 +36,6 @@ Widget buildPageBrazil() {
             int deaths = snapshot.data["deaths"]["value"];
             int sick = confirmed - deaths;
             int recovered = snapshot.data["recovered"]["value"];
-
             return Scaffold(
               backgroundColor: darkPrimary,
               body: SafeArea(
@@ -43,7 +43,7 @@ Widget buildPageBrazil() {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
                     SizedBox(
-                      height: 40.0,
+                      height: 30.0,
                     ),
                     CircleAvatar(
                       radius: 80.0,
@@ -51,70 +51,41 @@ Widget buildPageBrazil() {
                       backgroundColor: darkPrimary,
                     ),
                     SizedBox(
-                      height: 20.0,
+                      height: 30.0,
                     ),
-                    Card(
-                      margin: EdgeInsets.symmetric(
-                          vertical: 10.0, horizontal: 20.0),
-                      color: darkPrimaryText,
-                      child: ListTile(
-                        leading: Icon(
-                          FontAwesomeIcons.virus,
-                          color: Colors.yellow[400],
-                        ),
-                        title: Text(
-                          '$confirmed Casos',
-                          style: TextStyle(color: Colors.yellow[400]),
-                        ),
-                      ),
-                    ),
-                    Card(
-                      margin: EdgeInsets.symmetric(
-                          vertical: 10.0, horizontal: 20.0),
-                      color: darkPrimaryText,
-                      child: ListTile(
-                        leading: Icon(
-                          FontAwesomeIcons.lungsVirus,
-                          color: Colors.yellow[400],
-                        ),
-                        title: Text(
-                          '$sick Doentes',
-                          style: TextStyle(color: Colors.yellow[400]),
-                        ),
-                      ),
-                    ),
-                    Card(
-                      margin: EdgeInsets.symmetric(
-                          vertical: 10.0, horizontal: 20.0),
-                      color: darkPrimaryText,
-                      child: ListTile(
-                        leading: Icon(
-                          Icons.autorenew,
-                          color: Colors.yellow[400],
-                        ),
-                        title: Text(
-                          '$recovered Recuperados',
-                          style: TextStyle(
-                            color: Colors.yellow[400],
+                    Expanded(
+                      child: GridView.count(
+                        crossAxisCount: 2,
+                        mainAxisSpacing: 10.0,
+                        crossAxisSpacing: 2,
+                        children: <Widget>[
+                          GestureDetector(
+                            child: cardInfo('$confirmed\nCasos',
+                                FontAwesomeIcons.virus, Colors.yellow[400]),
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => WebViewAbout(),
+                                ),
+                              );
+                            },
                           ),
-                        ),
+                          GestureDetector(
+                            child: cardInfo(
+                                '$sick\nDoentes', FontAwesomeIcons.headSideVirus, Colors.yellow[400]),
+                          ),
+                          GestureDetector(
+                            child: cardInfo(
+                                '$recovered\nRecuperados', Icons.autorenew, Colors.yellow[400]),
+                          ),
+                          GestureDetector(
+                            child: cardInfo(
+                                '$deaths\nMortes', FontAwesomeIcons.cross, Colors.yellow[400]),
+                          ),
+                        ],
                       ),
                     ),
-                    Card(
-                      margin: EdgeInsets.symmetric(
-                          vertical: 10.0, horizontal: 20.0),
-                      color: darkPrimaryText,
-                      child: ListTile(
-                        leading: Icon(
-                          FontAwesomeIcons.cross,
-                          color: Colors.yellow[400],
-                        ),
-                        title: Text(
-                          '$deaths Mortes',
-                          style: TextStyle(color: Colors.yellow[400]),
-                        ),
-                      ),
-                    )
                   ],
                 ),
               ),

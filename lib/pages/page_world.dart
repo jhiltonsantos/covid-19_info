@@ -1,4 +1,5 @@
 import 'package:covidinfo/api_covid.dart';
+import 'package:covidinfo/pages/webview.dart';
 import 'package:covidinfo/widget.dart';
 import 'package:covidinfo/colors.dart';
 import 'package:flutter/material.dart';
@@ -12,21 +13,21 @@ Widget buildPageWorld() {
       switch (snapshot.connectionState) {
         case ConnectionState.none:
         case ConnectionState.waiting:
-        return Scaffold(
-          backgroundColor: darkPrimary,
-          body: Center(
-            child: Container(
-              alignment: Alignment.center,
-              width: 70,
-              height: 70,
-              child: CircularProgressIndicator(
-                backgroundColor: darkPrimary,
-                valueColor: AlwaysStoppedAnimation<Color>(darkPrimaryPurple),
-                strokeWidth: 5.0,
+          return Scaffold(
+            backgroundColor: darkPrimary,
+            body: Center(
+              child: Container(
+                alignment: Alignment.center,
+                width: 70,
+                height: 70,
+                child: CircularProgressIndicator(
+                  backgroundColor: darkPrimary,
+                  valueColor: AlwaysStoppedAnimation<Color>(darkPrimaryPurple),
+                  strokeWidth: 5.0,
+                ),
               ),
             ),
-          ),
-        );
+          );
         default:
           if (snapshot.hasError) {
             return Center(child: buildTextCharger("Erro ao carregar dados"));
@@ -39,10 +40,9 @@ Widget buildPageWorld() {
               backgroundColor: darkPrimary,
               body: SafeArea(
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
                     SizedBox(
-                      height: 40.0,
+                      height: 30.0,
                     ),
                     CircleAvatar(
                       radius: 80.0,
@@ -50,70 +50,41 @@ Widget buildPageWorld() {
                       backgroundColor: darkPrimary,
                     ),
                     SizedBox(
-                      height: 20.0,
+                      height: 30.0,
                     ),
-                    Card(
-                      margin: EdgeInsets.symmetric(
-                          vertical: 10.0, horizontal: 20.0),
-                      color: darkPrimaryText,
-                      child: ListTile(
-                        leading: Icon(
-                          FontAwesomeIcons.virus,
-                          color: Colors.redAccent[100],
-                        ),
-                        title: Text(
-                          '$confirmed Casos',
-                          style: TextStyle(color: Colors.redAccent[100]),
-                        ),
-                      ),
-                    ),
-                    Card(
-                      margin: EdgeInsets.symmetric(
-                          vertical: 10.0, horizontal: 20.0),
-                      color: darkPrimaryText,
-                      child: ListTile(
-                        leading: Icon(
-                          FontAwesomeIcons.lungsVirus,
-                          color: Colors.redAccent[100],
-                        ),
-                        title: Text(
-                          '$sick Doentes',
-                          style: TextStyle(color: Colors.redAccent[100]),
-                        ),
-                      ),
-                    ),
-                    Card(
-                      margin: EdgeInsets.symmetric(
-                          vertical: 10.0, horizontal: 20.0),
-                      color: darkPrimaryText,
-                      child: ListTile(
-                        leading: Icon(
-                          Icons.autorenew,
-                          color: Colors.redAccent[100],
-                        ),
-                        title: Text(
-                          '$recovered Recuperados',
-                          style: TextStyle(
-                            color: Colors.redAccent[100],
+                    Expanded(
+                      child: GridView.count(
+                        crossAxisCount: 2,
+                        mainAxisSpacing: 10.0,
+                        crossAxisSpacing: 2,
+                        children: <Widget>[
+                          GestureDetector(
+                            child: cardInfo(
+                                '$confirmed\nCasos', FontAwesomeIcons.virus, Colors.redAccent[100]),
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => WebViewAbout(),
+                                ),
+                              );
+                            },
                           ),
-                        ),
+                          GestureDetector(
+                            child: cardInfo(
+                                '$sick\nDoentes', FontAwesomeIcons.headSideVirus, Colors.redAccent[100]),
+                          ),
+                          GestureDetector(
+                            child: cardInfo(
+                                '$recovered\nRecuperados', Icons.autorenew, Colors.redAccent[100]),
+                          ),
+                          GestureDetector(
+                            child: cardInfo(
+                                '$deaths\nMortes', FontAwesomeIcons.cross, Colors.redAccent[100]),
+                          ),
+                        ],
                       ),
                     ),
-                    Card(
-                      margin: EdgeInsets.symmetric(
-                          vertical: 10.0, horizontal: 20.0),
-                      color: darkPrimaryText,
-                      child: ListTile(
-                        leading: Icon(
-                          FontAwesomeIcons.cross,
-                          color: Colors.redAccent[100],
-                        ),
-                        title: Text(
-                          '$deaths Mortes',
-                          style: TextStyle(color: Colors.redAccent[100]),
-                        ),
-                      ),
-                    )
                   ],
                 ),
               ),

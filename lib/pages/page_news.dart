@@ -75,6 +75,7 @@ Widget _createNewTable(BuildContext context, AsyncSnapshot snapshot) {
                             style: TextStyle(
                               color: Colors.lightGreenAccent,
                               fontSize: 18.0,
+                              fontFamily: 'DMSerif'
                             ),
                             textAlign: TextAlign.center,
                           ),
@@ -83,12 +84,14 @@ Widget _createNewTable(BuildContext context, AsyncSnapshot snapshot) {
                     ),
                   ),
                   Expanded(
-                    child: FadeInImage.memoryNetwork(
-                      placeholder: kTransparentImage,
-                      image: _imageWebCard(snapshot, index),
-                      width: 350.0,
-                      height: 160.0,
-                      fit: BoxFit.cover,
+                    child: Card(
+                      child: FadeInImage.memoryNetwork(
+                        placeholder: kTransparentImage,
+                        image: _imageWebCard(snapshot, index),
+                        width: 350.0,
+                        height: 160.0,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                   SizedBox(
