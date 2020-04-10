@@ -62,8 +62,10 @@ Widget _createNewTable(BuildContext context, AsyncSnapshot snapshot) {
               child: Column(
                 children: <Widget>[
                   SizedBox(
-                      width: 400.0,
-                      height: 100.0,
+                    width: 400.0,
+                    height: 100.0,
+                    child: Card(
+                      color: darkPrimaryText,
                       child: Padding(
                         padding: EdgeInsets.symmetric(
                             horizontal: 10.0, vertical: 5.0),
@@ -77,18 +79,20 @@ Widget _createNewTable(BuildContext context, AsyncSnapshot snapshot) {
                             textAlign: TextAlign.center,
                           ),
                         ),
-                      )),
+                      ),
+                    ),
+                  ),
                   Expanded(
                     child: FadeInImage.memoryNetwork(
                       placeholder: kTransparentImage,
                       image: _imageWebCard(snapshot, index),
-                      width: 300.0,
-                      height: 170.0,
+                      width: 350.0,
+                      height: 160.0,
                       fit: BoxFit.cover,
                     ),
                   ),
                   SizedBox(
-                    height: 10.0,
+                    height: 20.0,
                   )
                 ],
               ),

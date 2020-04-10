@@ -27,7 +27,7 @@ class WebViewNews extends StatelessWidget {
             _controller.complete(controller);
           },
           initialUrl: _newsData["url"],
-          javascriptMode: JavascriptMode.unrestricted),
+          javascriptMode: JavascriptMode.disabled),
     );
   }
 }

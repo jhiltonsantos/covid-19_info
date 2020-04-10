@@ -43,11 +43,9 @@ class _HomeState extends State<Home> {
             Center(
               child: buildPageWorld(),
             ),
-            Scaffold(
-              backgroundColor: darkPrimary,
-              body: Center(
+           Center(
                 child: buildPageBrazil(),
-              ),
+
             ),
             Center(
               child: buildPageNews(),
@@ -85,7 +83,7 @@ class _HomeState extends State<Home> {
               textAlign: TextAlign.center,
             ),
             BottomNavyBarItem(
-              icon: Icon(FontAwesomeIcons.newspaper),
+              icon: Icon(FontAwesomeIcons.solidNewspaper),
               title: Text('Notícias'),
               activeColor: Colors.lightGreenAccent,
               textAlign: TextAlign.center,
