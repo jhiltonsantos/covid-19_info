@@ -37,6 +37,19 @@ Widget buildPageWorld() {
             int sick = confirmed - deaths;
             int recovered = snapshot.data["recovered"]["value"];
             return Scaffold(
+              floatingActionButton: FloatingActionButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => WebViewReuters(),
+                    ),
+                  );
+                },
+                child: Icon(FontAwesomeIcons.plus),
+                backgroundColor: Colors.redAccent,
+
+              ),
               backgroundColor: darkPrimary,
               body: SafeArea(
                 child: Column(
@@ -61,14 +74,6 @@ Widget buildPageWorld() {
                           GestureDetector(
                             child: cardInfo(
                                 '$confirmed\nCasos', FontAwesomeIcons.virus, Colors.redAccent[100]),
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => WebViewAbout(),
-                                ),
-                              );
-                            },
                           ),
                           GestureDetector(
                             child: cardInfo(

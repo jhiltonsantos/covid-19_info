@@ -37,6 +37,19 @@ Widget buildPageBrazil() {
             int sick = confirmed - deaths;
             int recovered = snapshot.data["recovered"]["value"];
             return Scaffold(
+              floatingActionButton: FloatingActionButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => WebViewGovSaude(),
+                    ),
+                  );
+                },
+                child: Icon(FontAwesomeIcons.plus),
+                backgroundColor: Colors.yellow,
+
+              ),
               backgroundColor: darkPrimary,
               body: SafeArea(
                 child: Column(
@@ -60,28 +73,25 @@ Widget buildPageBrazil() {
                         crossAxisSpacing: 2,
                         children: <Widget>[
                           GestureDetector(
-                            child: cardInfo('$confirmed\nCasos',
-                                FontAwesomeIcons.virus, Colors.yellow[400]),
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => WebViewAbout(),
-                                ),
-                              );
-                            },
+                            child: cardInfo(
+                              '$confirmed\nCasos',
+                              FontAwesomeIcons.virus,
+                              Colors.yellow[400],
+                            ),
                           ),
                           GestureDetector(
                             child: cardInfo(
-                                '$sick\nDoentes', FontAwesomeIcons.headSideVirus, Colors.yellow[400]),
+                                '$sick\nDoentes',
+                                FontAwesomeIcons.headSideVirus,
+                                Colors.yellow[400]),
                           ),
                           GestureDetector(
-                            child: cardInfo(
-                                '$recovered\nRecuperados', Icons.autorenew, Colors.yellow[400]),
+                            child: cardInfo('$recovered\nRecuperados',
+                                Icons.autorenew, Colors.yellow[400]),
                           ),
                           GestureDetector(
-                            child: cardInfo(
-                                '$deaths\nMortes', FontAwesomeIcons.cross, Colors.yellow[400]),
+                            child: cardInfo('$deaths\nMortes',
+                                FontAwesomeIcons.cross, Colors.yellow[400]),
                           ),
                         ],
                       ),

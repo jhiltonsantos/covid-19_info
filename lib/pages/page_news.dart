@@ -1,5 +1,5 @@
 import 'package:covidinfo/api_covid.dart';
-import 'package:covidinfo/pages/webview_news.dart';
+import 'package:covidinfo/pages/webview.dart';
 import 'package:covidinfo/widget.dart';
 import 'package:covidinfo/colors.dart';
 import 'package:flutter/material.dart';
