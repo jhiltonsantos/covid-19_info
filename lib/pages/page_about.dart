@@ -1,4 +1,5 @@
 import 'package:covidinfo/api_covid.dart';
+import 'package:covidinfo/pages/webview.dart';
 import 'package:covidinfo/widget.dart';
 import 'package:covidinfo/colors.dart';
 import 'package:flutter/material.dart';
@@ -12,21 +13,21 @@ Widget buildPageAbout() {
       switch (snapshot.connectionState) {
         case ConnectionState.none:
         case ConnectionState.waiting:
-        return Scaffold(
-          backgroundColor: darkPrimary,
-          body: Center(
-            child: Container(
-              alignment: Alignment.center,
-              width: 70,
-              height: 70,
-              child: CircularProgressIndicator(
-                backgroundColor: darkPrimary,
-                valueColor: AlwaysStoppedAnimation<Color>(darkPrimaryPurple),
-                strokeWidth: 5.0,
+          return Scaffold(
+            backgroundColor: darkPrimary,
+            body: Center(
+              child: Container(
+                alignment: Alignment.center,
+                width: 70,
+                height: 70,
+                child: CircularProgressIndicator(
+                  backgroundColor: darkPrimary,
+                  valueColor: AlwaysStoppedAnimation<Color>(darkPrimaryPurple),
+                  strokeWidth: 5.0,
+                ),
               ),
             ),
-          ),
-        );
+          );
         default:
           if (snapshot.hasError) {
             return Center(child: buildTextCharger("Erro ao carregar dados"));
@@ -83,22 +84,32 @@ Widget buildPageAbout() {
                         ),
                       ),
                     ),
-                    Card(
-                      margin: EdgeInsets.symmetric(
-                          vertical: 10.0, horizontal: 20.0),
-                      color: darkPrimaryText,
-                      child: ListTile(
-                        leading: Icon(
-                          MdiIcons.github,
-                          color: Colors.blue[300],
-                        ),
-                        title: Text(
-                          'jhiltonsantos/covid-19_info',
-                          style: TextStyle(
+                    GestureDetector(
+                      child: Card(
+                        margin: EdgeInsets.symmetric(
+                            vertical: 10.0, horizontal: 20.0),
+                        color: darkPrimaryText,
+                        child: ListTile(
+                          leading: Icon(
+                            MdiIcons.github,
                             color: Colors.blue[300],
+                          ),
+                          title: Text(
+                            'jhiltonsantos/covid-19_info',
+                            style: TextStyle(
+                              color: Colors.blue[300],
+                            ),
                           ),
                         ),
                       ),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => WebViewAbout(),
+                          ),
+                        );
+                      },
                     )
                   ],
                 ),
