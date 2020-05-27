@@ -1,6 +1,7 @@
 import 'package:covidinfo/services/api_covid.dart';
 import 'package:covidinfo/services/wv_news.dart';
-import 'package:covidinfo/utilities/widget.dart';
+import 'package:covidinfo/utilities/build_text_charger.dart';
+import 'package:covidinfo/utilities/card_info.dart';
 import 'package:covidinfo/utilities/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';

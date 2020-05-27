@@ -1,18 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:covidinfo/utilities/constants.dart';
 
-
-Widget buildTextCharger(String text) {
-  return Scaffold(
-    backgroundColor: darkPrimary,
-    body: Center(
-      child: Text(text,
-          style: TextStyle(color: darkPrimaryPurple, fontSize: 25.0),
-          textAlign: TextAlign.center),
-    ),
-  );
-}
-
 Widget cardInfo(String text, IconData iconData, Color colorData) {
   return Card(
     margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
