@@ -1,7 +1,7 @@
-import 'package:covidinfo/api_covid.dart';
-import 'package:covidinfo/pages/webview.dart';
-import 'package:covidinfo/widget.dart';
-import 'package:covidinfo/colors.dart';
+import 'package:covidinfo/services/api_covid.dart';
+import 'package:covidinfo/services/wv_news.dart';
+import 'package:covidinfo/utilities/widget.dart';
+import 'package:covidinfo/utilities/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:transparent_image/transparent_image.dart';

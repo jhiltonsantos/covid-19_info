@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:covidinfo/colors.dart';
+import 'package:covidinfo/utilities/constants.dart';
 
 
 Widget buildTextCharger(String text) {

@@ -1,12 +1,12 @@
-import 'package:covidinfo/colors.dart';
-import 'package:covidinfo/pages/page_about.dart';
+import 'package:covidinfo/utilities/constants.dart';
+import 'package:covidinfo/screens/page_about.dart';
 import 'package:flutter/material.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:covidinfo/pages/page_brazil.dart';
-import 'package:covidinfo/pages/page_world.dart';
-import 'package:covidinfo/pages/page_news.dart';
+import 'package:covidinfo/screens/page_brazil.dart';
+import 'package:covidinfo/screens/page_world.dart';
+import 'package:covidinfo/screens/page_news.dart';
 
 class Home extends StatefulWidget {
   @override
