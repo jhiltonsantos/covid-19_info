@@ -13,7 +13,7 @@ dependencies:
   material_design_icons_flutter: ^4.0.5045
   font_awesome_flutter: ^8.8.1
   country_icons: ^1.1.1
-  http: ^0.12.0+2
+  http: ^0.13.3
   fl_chart: ^0.8.7
   webview_flutter: ^0.3.0
   transparent_image: ^1.0.0
